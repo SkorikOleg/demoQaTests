@@ -5,10 +5,10 @@ import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class FirstClass {
+public class Junit5Expamples {
 
     @BeforeAll //аннотация для запуста теста до все тестов
-    static void beforeAll() { //используется метод static
+    static void beforeAll() { // с этой аннотацией всегда используется метод static
         System.out.println("beforeAll()");
         Configuration.browser = "chrome"; //указание на конкретный запуск браузера
     }
