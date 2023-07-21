@@ -1,6 +1,5 @@
 package com.demoqa;
 
-import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -10,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import com.demoqa.TestBase;
 
-public class RegForm {
+public class RegFormTest {
 
     @Test
     void fillRegistrationForm() {
