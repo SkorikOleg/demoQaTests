@@ -1,4 +1,4 @@
-package demoqaRegForm;
+package com.demoqa;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
@@ -7,15 +7,16 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
 
-public class RegistrationForm {
+public class RegForm {
 
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
-        Configuration.holdBrowserOpen = true;
+        //Configuration.holdBrowserOpen = true;
     }
 
     @Test
@@ -49,14 +50,14 @@ public class RegistrationForm {
 
         $("#uploadPicture").uploadFromClasspath("test.jpg"); // нужно добавить файл
 
-        $ ("#currentAddress").click();
-        $ ("#currentAddress").setValue("Amur region, Lenin str, 270 house");
+        $("#currentAddress").click();
+        $("#currentAddress").setValue("Amur region, Lenin str, 270 house");
 
 
-        $ ("#state").click();
-        $ ("#stateCity-wrapper").$ (byText("NCR")).click();
-        $ ("#city").click();
-        $ ("#stateCity-wrapper").$ (byText("Noida")).click();
+        $("#state").click();
+        $("#stateCity-wrapper").$(byText("NCR")).click();
+        $("#city").click();
+        $("#stateCity-wrapper").$(byText("Noida")).click();
 
         $("#submit").click();
 
