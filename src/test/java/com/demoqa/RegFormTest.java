@@ -7,9 +7,8 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import com.demoqa.TestBase;
 
-public class RegFormTest {
+public class RegFormTest extends TestBase {
 
     @Test
     void fillRegistrationForm() {
@@ -40,11 +39,11 @@ public class RegFormTest {
 
         $("#hobbiesWrapper").$(byText("Sports")).click();
 
-        $("#uploadPicture").uploadFromClasspath("test.jpg"); // нужно добавить файл
+        $("#uploadPicture").uploadFromClasspath("test.jpg"); //для добавления файла через кнопку
+        //для этого надо создать папку resources и добавить туда нужно вложение
 
         $("#currentAddress").click();
         $("#currentAddress").setValue("Amur region, Lenin str, 270 house");
-
 
         $("#state").click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
@@ -53,16 +52,9 @@ public class RegFormTest {
 
         $("#submit").click();
 
-        $(".table-responsive").shouldHave(text("Oleg Skorik"));
-        $(".table-responsive").shouldHave(text("g@gmail.com"));
-        $(".table-responsive").shouldHave(text("Male"));
-        $(".table-responsive").shouldHave(text("1234567890"));
-        $(".table-responsive").shouldHave(text("14 June,1992"));
-        $(".table-responsive").shouldHave(text("Maths"));
-        $(".table-responsive").shouldHave(text("Sports"));
-        $(".table-responsive").shouldHave(text("test.jpg"));
-        $(".table-responsive").shouldHave(text("Amur region, Lenin str, 270 house"));
+        $(".table-responsive").shouldHave(text("Oleg Skorik"), text("g@gmail.com"), text("1234567890"));
+        $(".table-responsive").shouldHave(text("Male"), text("14 June,1992"),text("Maths"), text("Sports"));
+        $(".table-responsive").shouldHave(text("test.jpg"), text("Amur region, Lenin str, 270 house"));
         $(".table-responsive").shouldHave(text("NCR Noida"));
-
     }
 }
