@@ -10,6 +10,7 @@ public class Junit5Expamples {
     @BeforeAll //аннотация для запуста теста до все тестов
     static void beforeAll() { // с этой аннотацией всегда используется метод static
         System.out.println("beforeAll()");
+        //new one comment
         Configuration.browser = "chrome"; //указание на конкретный запуск браузера
     }
 
