@@ -3,16 +3,15 @@ package com.demoqa;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
+import com.demoqa.TestBase;
 
-public class TextBoxTests extends TestBase {
+public class TextBoxTests {
 
     @Test
     void fillFormTest (){
         open ("/text-box");
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
 
         $ ("#userName").setValue("Oleg Skorik");
         $ ("#userEmail").setValue("new@one.com");

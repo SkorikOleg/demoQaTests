@@ -7,8 +7,9 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import com.demoqa.TestBase;
 
-public class RegFormTest extends TestBase {
+public class RegFormTest {
 
     @Test
     void fillRegistrationForm() {
