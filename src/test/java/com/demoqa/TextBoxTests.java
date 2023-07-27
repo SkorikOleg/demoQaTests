@@ -19,8 +19,7 @@ public class TextBoxTests extends TestBase {
         $ ("#submit").click();
 
         //$ ("#output").$ ("#name").shouldHave(text("")); - если нам необходимо использовать локатор
-        //        // внутри родителя, то мы можем добавить вот так
-
+        //внутри родителя, то мы можем добавить вот так
         $ ("#output #name").shouldHave(text("Oleg Skorik")); // а можем через пробел указать
         $ ("#output #email").shouldHave(text("new@one.com"));
         $ ("#output #currentAddress").shouldHave(text("Amur Region, Blago city"));
