@@ -4,7 +4,8 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SelenideHW1Test {
@@ -13,7 +14,7 @@ public class SelenideHW1Test {
     static void beforeAll() {
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
-        Configuration.holdBrowserOpen = true;
+        //Configuration.holdBrowserOpen = true;
     }
 
     @Test
@@ -31,11 +32,18 @@ public class SelenideHW1Test {
         // - Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
         $("#wiki-pages-filter").click();
         $("#wiki-pages-filter").setValue("SoftAssertions");
-        $(".Truncate").click();
+        $("#wiki-pages-box").$(byText("SoftAssertions")).click();
 
         //$("#wiki-pages-box").scrollIntoView("false");
 
         // - Откройте страницу SoftAssertions, проверьте что внутри есть пример кода для JUnit5
-        $(".markdown-body").shouldHave(text("Using JUnit5 extend test class"));
+        $(".markdown-body").shouldHave(text("@Test\n" +
+                "  void test() {\n" +
+                "    Configuration.assertionMode = SOFT;\n" +
+                "    open(\"page.html\");\n" +
+                "\n" +
+                "    $(\"#first\").should(visible).click();\n" +
+                "    $(\"#second\").should(visible).click();\n" +
+                "  }"));
     }
 }
