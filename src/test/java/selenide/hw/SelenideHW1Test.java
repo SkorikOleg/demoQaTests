@@ -1,21 +1,13 @@
 package selenide.hw;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
+import com.demoqa.TestBase;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class SelenideHW1Test {
-
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.browserSize = "1920x1080";
-        //Configuration.holdBrowserOpen = true;
-    }
+public class SelenideHW1Test extends TestBase {
 
     @Test
     void lookForSomeInGit() {

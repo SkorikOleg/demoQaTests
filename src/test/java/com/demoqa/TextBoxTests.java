@@ -10,7 +10,7 @@ public class TextBoxTests extends TestBase {
 
     @Test
     void fillFormTest (){
-        open ("/text-box");
+        open ("https://demoqa.com/text-box");
 
         $ ("#userName").setValue("Oleg Skorik");
         $ ("#userEmail").setValue("new@one.com");
