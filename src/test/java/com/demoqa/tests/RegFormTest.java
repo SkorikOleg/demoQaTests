@@ -1,4 +1,4 @@
-package com.demoqa;
+package com.demoqa.tests;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,8 +9,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class RegFormTest extends TestBase {
-
-    @Test
+    
+        @Test
     void fillRegistrationForm() {
         open("https://demoqa.com/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
@@ -33,7 +33,7 @@ public class RegFormTest extends TestBase {
         //$("#dateOfBirthInput").clear(); - разобраться, как очищать поле, что бы ввести свое значение
         $(".react-datepicker__month-select").selectOptionContainingText("June");
         $(".react-datepicker__year-select").selectOptionContainingText("1992");
-        $(".react-datepicker__day--014").click();
+        $(".react-datepicker__day--014:not(.react-datepicker__day--outside-month)").click();
 
         $("#subjectsContainer input").setValue("Math").pressEnter();
 
