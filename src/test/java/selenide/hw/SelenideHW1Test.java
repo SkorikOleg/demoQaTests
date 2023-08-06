@@ -1,6 +1,6 @@
 package selenide.hw;
 
-import com.demoqa.TestBase;
+import com.demoqa.tests.TestBase;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
