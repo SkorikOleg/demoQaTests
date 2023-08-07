@@ -1,12 +1,7 @@
 package com.demoqa.tests;
 
 import com.demoqa.pages.RegFormPage;
-import com.demoqa.pages.components.CalendarComponent;
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
 
 public class RegFormWithPageObjectsTest extends TestBase {
 

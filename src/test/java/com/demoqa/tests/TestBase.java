@@ -3,9 +3,6 @@ package com.demoqa.tests;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 
-import static com.codeborne.selenide.Selenide.open;
-
-
 public class TestBase {
 
     @BeforeAll //аннотация для запуста теста до все тестов

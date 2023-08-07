@@ -18,7 +18,7 @@ public class RegFormPage {
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
-            genterWrapper = $("#genterWrapper"),
+            genderWrapper = $("#genterWrapper"),
             userNumber = $("#userNumber"),
             birthDateInput = $("#dateOfBirthInput"),
             subjectName = $("#subjectsContainer input"),
@@ -55,7 +55,7 @@ public class RegFormPage {
         return this;
     }
     public RegFormPage setGender(String value){
-        genterWrapper.$(byText(value)).click();
+        genderWrapper.$(byText(value)).click();
 
         return this;
     }
