@@ -99,6 +99,7 @@ public class RegFormPage {
 
         return this;
     }
+
     public RegFormPage clickSubmit(){
         submitClick.click();
 
