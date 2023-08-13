@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.demoqa.utils.RandomUtils.*;
 
-public class RegFormRandomUltilsTest extends TestBase {
+public class RegFormRandomUtilsTest extends TestBase {
 
 
     @Test
@@ -18,7 +18,7 @@ public class RegFormRandomUltilsTest extends TestBase {
                 userEmail = getRandomEmail(),
                 gender = getRandomGender();
 
-        open("https://demoqa.com/automation-practice-form");
+        open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
