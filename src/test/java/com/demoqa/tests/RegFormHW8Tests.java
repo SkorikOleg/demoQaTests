@@ -4,6 +4,7 @@ import com.demoqa.pages.RegFormPage;
 import org.junit.jupiter.api.Test;
 
 import static com.demoqa.utils.UserVariables.*;
+
 public class RegFormHW8Tests extends TestBase {
 
     RegFormPage regFormPage = new RegFormPage();

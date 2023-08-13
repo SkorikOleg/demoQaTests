@@ -1,6 +1,7 @@
 package com.demoqa.utils;
 
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.Disabled;
 
 import java.security.SecureRandom;
 import java.util.Locale;
@@ -117,12 +118,13 @@ public class RandomUtils {
         return sb.toString();
     }
 
-    /*public static String getRandomEmail() {
+@Disabled
+    public static String getSimpleRandomEmail() {
         return getRandomString(5) + "@qa.guru";
         //return getRandomString(15) + "@" + getRandomString(3) + "." + getRandomString(3);
         /*return String.format("%s@%s.%s", getRandomString(11),
-                getRandomString(3), getRandomString(3));
-    }*/
+                getRandomString(3), getRandomString(3));*/
+    }
 
     public static int getRandomInt(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max + 1);

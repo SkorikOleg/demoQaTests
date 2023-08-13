@@ -20,7 +20,7 @@ public class RegFormWithFakerTests extends TestBase {
 
         String firstName = getRandomFirstName(),
                 lastName = getRandomLastName(),
-                userEmail = getRandomEmail();
+                userEmail = getSimpleRandomEmail();
                 //streetAddress = faker.address().streetAddress();
 
 
