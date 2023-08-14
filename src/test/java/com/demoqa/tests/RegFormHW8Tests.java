@@ -35,4 +35,5 @@ public class RegFormHW8Tests extends TestBase {
                 .checkResultTable(userAdress)
                 .checkResultTable(userState + " " + userCity);
     }
+
 }

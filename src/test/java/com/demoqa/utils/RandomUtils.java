@@ -2,9 +2,9 @@ package com.demoqa.utils;
 
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 
 import java.security.SecureRandom;
-import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -12,12 +12,13 @@ public class RandomUtils {
 
     static Faker faker = new Faker();
 
-    public static String getRandomFirstName() {
+    public String getRandomFirstName() {
         return faker.name().firstName();
 
     }
 
     public static String getRandomLastName() {
+
         return faker.name().lastName();
     }
 
@@ -27,8 +28,9 @@ public class RandomUtils {
     }
 
     public static String getRandomPhoneNumber() {
+        return faker.phoneNumber().subscriberNumber(10);
 
-        return faker.numerify("##########");
+        //return faker.numerify("##########"); - можно использовать как альтернативу
     }
 
     public static String getRandomDay() {
@@ -43,7 +45,8 @@ public class RandomUtils {
     public static String getRandomMonth() {
         String[] months = {"January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"};
-        return getRandomItemFromArray(months);
+
+        return faker.options().option(months);
     }
 
     public static String getRandomYear() {
@@ -55,29 +58,31 @@ public class RandomUtils {
         String[] subject = {"Hindi", "English", "Maths", "Physics", "Chemistry",
                 "Biology", "Computer Science", "Commerce", "Accounting", "Economics",
                 "Arts", "Social Studies", "History", "Civics"};
-        return getRandomItemFromArray(subject);
+
+        return faker.options().option(subject);
     }
 
     public static String getRandomHobbies() {
         String[] hobby = {"Sports", "Reading", "Music"};
 
-        return getRandomItemFromArray(hobby);
+        return faker.options().option(hobby);
     }
 
     public static String getRandomPicture() {
         String[] picture = {"test.jpg", "test2.jpg", "test3.jpg"};
 
-        return getRandomItemFromArray(picture);
+        return faker.options().option(picture);
     }
 
     public static String getRandomAddress() {
+
         return faker.address().fullAddress();
     }
 
     public static String getRandomState() {
         String[] state = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
 
-        return getRandomItemFromArray(state);
+        return faker.options().option(state);
     }
 
     public static String getRandomCity(String randomCity) {
@@ -87,19 +92,19 @@ public class RandomUtils {
         String[] cityRajasthan = {"Jaipur", "Jaiselmer"};
         switch (randomCity) {
             case "NCR":
-                return getRandomItemFromArray(cityNCR);
+                return faker.options().option(cityNCR);
             case "Uttar Pradesh":
-                return getRandomItemFromArray(cityUttar);
+                return faker.options().option(cityUttar);
             case "Haryana":
-                return getRandomItemFromArray(cityHaryana);
+                return faker.options().option(cityHaryana);
             case "Rajasthan":
-                return getRandomItemFromArray(cityRajasthan);
+                return faker.options().option(cityRajasthan);
         }
 
         return null;
     }
 
-
+    @DisplayName("Рандом без faker")
     public static void main(String[] args) {
         System.out.println(getRandomString(10));
         //System.out.println(getRandomEmail());
@@ -118,7 +123,7 @@ public class RandomUtils {
         return sb.toString();
     }
 
-@Disabled
+    @Disabled
     public static String getSimpleRandomEmail() {
         return getRandomString(5) + "@qa.guru";
         //return getRandomString(15) + "@" + getRandomString(3) + "." + getRandomString(3);
