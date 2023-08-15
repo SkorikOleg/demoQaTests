@@ -1,20 +1,21 @@
 package com.demoqa.utils;
 
 public class UserVariables {
-    public static String
+    RandomUtils randomUtils = new RandomUtils();
 
-            userFirstName = utils.getRandomFirstName(),
-            userLastName = RandomUtils.getRandomLastName(),
-            userEmail = RandomUtils.getRandomEmail(),
-            userGender = RandomUtils.getRandomGender(),
-            userPhone = RandomUtils.getRandomPhoneNumber(),
-            userDay = RandomUtils.getRandomDay(),
-            userMonth = RandomUtils.getRandomMonth(),
-            userYear = RandomUtils.getRandomYear(),
-            userSubjects = RandomUtils.getRandomSubjects(),
-            userHobby = RandomUtils.getRandomHobbies(),
-            userPicture = RandomUtils.getRandomPicture(),
-            userAdress = RandomUtils.getRandomAddress(),
-            userState = RandomUtils.getRandomState(),
-            userCity = RandomUtils.getRandomCity(userState);
+    public String
+            userFirstName = randomUtils.getRandomFirstName(),
+            userLastName = randomUtils.getRandomLastName(),
+            userEmail = randomUtils.getRandomEmail(),
+            userGender = randomUtils.getRandomGender(),
+            userPhone = randomUtils.getRandomPhoneNumber(),
+            userDay = randomUtils.getRandomDay(),
+            userMonth = randomUtils.getRandomMonth(),
+            userYear = randomUtils.getRandomYear(),
+            userSubjects = randomUtils.getRandomSubjects(),
+            userHobby = randomUtils.getRandomHobbies(),
+            userPicture = randomUtils.getRandomPicture(),
+            userAdress = randomUtils.getRandomAddress(),
+            userState = randomUtils.getRandomState(),
+            userCity = randomUtils.getRandomCity(userState);
 }

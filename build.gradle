@@ -19,5 +19,11 @@ dependencies {
 }
 
 test {
-    useJUnitPlatform()
+    //String tags = System.getProperty(tags) != null ? System.getProperty(tags) : "smoke"
+
+    useJUnitPlatform{
+       // includeTags "smoke" //необходимо для запуска тестов по тегам
+    }
+
+
 }

@@ -1,39 +1,40 @@
 package com.demoqa.tests;
 
 import com.demoqa.pages.RegFormPage;
+import com.demoqa.utils.UserVariables;
 import org.junit.jupiter.api.Test;
-
-import static com.demoqa.utils.UserVariables.*;
 
 public class RegFormHW8Tests extends TestBase {
 
     RegFormPage regFormPage = new RegFormPage();
+    UserVariables userVariables = new UserVariables();
 
     @Test
     void fillRegistrationForm() {
         regFormPage.openPage()
-                .setFirstNameInput(userFirstName)
-                .setLastNameInput(userLastName)
-                .setUserEmailInput(userEmail)
-                .setUserNumberInput(userPhone)
-                .setGender(userGender)
-                .setBirthDate(userDay, userMonth, userYear)
-                .setSubjectInput(userSubjects)
-                .setHobbiesInput(userHobby)
-                .uploadPicture(userPicture)
-                .setAddressInput(userAdress)
-                .setStateCityInput(userState, userCity)
+                .setFirstNameInput(userVariables.userFirstName)
+                .setLastNameInput(userVariables.userLastName)
+                .setUserEmailInput(userVariables.userEmail)
+                .setUserNumberInput(userVariables.userPhone)
+                .setGender(userVariables.userGender)
+                .setBirthDate(userVariables.userDay, userVariables.userMonth, userVariables.userYear)
+                .setSubjectInput(userVariables.userSubjects)
+                .setHobbiesInput(userVariables.userHobby)
+                .uploadPicture(userVariables.userPicture)
+                .setAddressInput(userVariables.userAdress)
+                .setStateCityInput(userVariables.userState, userVariables.userCity)
                 .clickSubmit()
-                .checkResultTable(userFirstName + " " + userLastName)
-                .checkResultTable(userEmail)
-                .checkResultTable(userPhone)
-                .checkResultTable(userGender)
-                .checkResultTable(userDay + " " + userMonth + "," + userYear)
-                .checkResultTable(userSubjects)
-                .checkResultTable(userHobby)
-                .checkResultTable(userPicture)
-                .checkResultTable(userAdress)
-                .checkResultTable(userState + " " + userCity);
+                .checkResultTable(userVariables.userFirstName + " " + userVariables.userLastName)
+                .checkResultTable(userVariables.userEmail)
+                .checkResultTable(userVariables.userPhone)
+                .checkResultTable(userVariables.userGender)
+                .checkResultTable(userVariables.userDay
+                        + " " + userVariables.userMonth
+                        + "," + userVariables.userYear)
+                .checkResultTable(userVariables.userSubjects)
+                .checkResultTable(userVariables.userHobby)
+                .checkResultTable(userVariables.userPicture)
+                .checkResultTable(userVariables.userAdress)
+                .checkResultTable(userVariables.userState + " " + userVariables.userCity);
     }
-
 }
