@@ -10,7 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomUtils {
 
-    static Faker faker = new Faker();
+    Faker faker = new Faker();
 
     public String getRandomFirstName() {
         return faker.name().firstName();
