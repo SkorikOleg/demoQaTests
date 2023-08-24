@@ -39,7 +39,7 @@ public class RegFormTest extends TestBase {
 
         $("#hobbiesWrapper").$(byText("Sports")).click();
 
-        $("#uploadPicture").uploadFromClasspath("test.jpg"); //для добавления файла через кнопку
+        $("#uploadPicture").uploadFromClasspath("filesForUtils/test.jpg"); //для добавления файла через кнопку
         //для этого надо создать папку resources и добавить туда нужно вложение
 
         $("#currentAddress").click();
@@ -54,7 +54,7 @@ public class RegFormTest extends TestBase {
 
         $(".table-responsive").shouldHave(text("Oleg Skorik"), text("g@gmail.com"), text("1234567890"));
         $(".table-responsive").shouldHave(text("Male"), text("14 June,1992"),text("Maths"), text("Sports"));
-        $(".table-responsive").shouldHave(text("test.jpg"), text("Amur region, Lenin str, 270 house"));
+        $(".table-responsive").shouldHave(text("filesForUtils/test.jpg"), text("Amur region, Lenin str, 270 house"));
         $(".table-responsive").shouldHave(text("NCR Noida"));
     }
 }

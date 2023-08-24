@@ -69,7 +69,7 @@ public class RandomUtils {
     }
 
     public String getRandomPicture() {
-        String[] picture = {"test.jpg", "test2.jpg", "test3.jpg"};
+        String[] picture = {"filesForUtils/test.jpg", "filesForUtils/test2.jpg", "filesForUtils/test3.jpg"};
 
         return faker.options().option(picture);
     }

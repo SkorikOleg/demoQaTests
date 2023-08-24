@@ -1,4 +1,4 @@
-package guru.qa;
+package guru.qa.hw;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeEach;
@@ -38,7 +38,7 @@ public class AnnotationHW9Test {
         $(".search-input").click();
         $("#query-builder-test").setValue(value).pressEnter();
     }
-    @CsvFileSource(resources = "/AnnotationHW9Test.csv")
+    @CsvFileSource(resources = "/filesEx9/AnnotationHW9Test.csv")
     @ParameterizedTest(name = "В результате поиска отображен результат {1} по тексту запроса {0}")
     void successSearchInGithubUseCsvFileSource(String value, String searchQuery) {
         $(".search-input").click();

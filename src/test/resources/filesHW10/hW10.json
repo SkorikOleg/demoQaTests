@@ -1,0 +1,10 @@
+{
+	"brand": "toyota",
+	"model": "allion",
+	"characteristics": {
+		"capacityEngine": 1.5,
+		"colourBody": "grey",
+		"colourInterior": "black",
+		"issueYear": 2008
+	}
+}
