@@ -18,7 +18,7 @@ public class CheckZipHW10Test {
 
     private final ClassLoader cl = CheckZipHW10Test.class.getClassLoader();
 
-    @DisplayName("Проверка наличия файлов в ZIP")
+    @DisplayName("РџСЂРѕРІРµСЂРєР° РЅР°Р»РёС‡РёСЏ С„Р°Р№Р»РѕРІ РІ ZIP")
     private ZipInputStream openZipStream() {
         InputStream stream = cl.getResourceAsStream("filesHW10/hW10.zip");
         return new ZipInputStream(stream);
@@ -33,7 +33,7 @@ public class CheckZipHW10Test {
         }
         return false;
     }
-@DisplayName("ZIP содержит нужный csv файл")
+@DisplayName("ZIP СЃРѕРґРµСЂР¶РёС‚ РЅСѓР¶РЅС‹Р№ csv С„Р°Р№Р»")
     @Test
     void checkCsvTest() throws Exception {
         try (ZipInputStream zip = openZipStream()) {
@@ -53,17 +53,17 @@ public class CheckZipHW10Test {
         }
     }
 
-    @DisplayName("ZIP содержит нужный pdf файл")
+    @DisplayName("ZIP СЃРѕРґРµСЂР¶РёС‚ РЅСѓР¶РЅС‹Р№ pdf С„Р°Р№Р»")
     @Test
     void checkPdfTest() throws Exception {
         try (ZipInputStream zip = openZipStream()) {
             Assertions.assertTrue(isFileInZip("deadSouls.pdf", zip));
             PDF pdf = new PDF(zip);
-            Assertions.assertTrue(pdf.text.contains("Мертвые души"));
+            Assertions.assertTrue(pdf.text.contains("РњРµСЂС‚РІС‹Рµ РґСѓС€Рё"));
         }
     }
 
-    @DisplayName("ZIP содержит нужный xls файл")
+    @DisplayName("ZIP СЃРѕРґРµСЂР¶РёС‚ РЅСѓР¶РЅС‹Р№ xls С„Р°Р№Р»")
     @Test
     void checkXlsTest() throws Exception {
         try (ZipInputStream zip = openZipStream()) {
