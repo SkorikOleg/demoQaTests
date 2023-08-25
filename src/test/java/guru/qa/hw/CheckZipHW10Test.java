@@ -33,7 +33,7 @@ public class CheckZipHW10Test {
         }
         return false;
     }
-@DisplayName("ZIP содержит нужный csv файл")
+@DisplayName("ZIP содержит необходимый csv файл")
     @Test
     void checkCsvTest() throws Exception {
         try (ZipInputStream zip = openZipStream()) {

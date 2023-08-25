@@ -15,7 +15,7 @@ public class CheckJsonWithJacksonHW10Test {
     private final ClassLoader cl = CheckJsonWithJacksonHW10Test.class.getClassLoader();
 
 
-    @DisplayName("Использование jackson для чтения json")
+    @DisplayName("РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ jackson РґР»СЏ С‡С‚РµРЅРёСЏ json")
     @Test
     void useJacksonForJson() throws Exception {
         try (InputStream stream = cl.getResourceAsStream("filesHW10/hW10.json");
