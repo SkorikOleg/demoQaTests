@@ -33,7 +33,7 @@ dependencies {
 
 test {
     useJUnitPlatform {
-        // includeTags "smoke" //необходимо для запуска тестов по тегам
+        // includeTags "smoke" //РЅРµРѕР±С…РѕРґРёРјРѕ РґР»СЏ Р·Р°РїСѓСЃРєР° С‚РµСЃС‚РѕРІ РїРѕ С‚РµРіР°Рј
     }
 
 
