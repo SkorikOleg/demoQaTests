@@ -1,10 +1,8 @@
 package guru.qa.hw;
 
 import com.codeborne.pdftest.PDF;
-import com.codeborne.selenide.As;
 import com.codeborne.xlstest.XLS;
 import com.opencsv.CSVReader;
-import guru.qa.ex.FileParsingTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,9 +14,9 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-public class checkZipHW10Test {
+public class CheckZipHW10Test {
 
-    private final ClassLoader cl = checkZipHW10Test.class.getClassLoader();
+    private final ClassLoader cl = CheckZipHW10Test.class.getClassLoader();
 
     @DisplayName("Проверка наличия файлов в ZIP")
     private ZipInputStream openZipStream() {

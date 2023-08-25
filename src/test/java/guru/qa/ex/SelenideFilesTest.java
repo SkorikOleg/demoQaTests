@@ -21,9 +21,9 @@ public class SelenideFilesTest {
         Configuration.pageLoadStrategy = "eager";
     }
 
-    //экспорт файла TXT
+    //СЌРєСЃРїРѕСЂС‚ С„Р°Р№Р»Р° TXT
     @Test
-    void downloadTxtFileTest() throws Exception {//добавляем исключение метода через throws
+    void downloadTxtFileTest() throws Exception {//РґРѕР±Р°РІР»СЏРµРј РёСЃРєР»СЋС‡РµРЅРёРµ РјРµС‚РѕРґР° С‡РµСЂРµР· throws
         open("https://github.com/junit-team/junit5/blob/main/README.md");
         File downloaded = $("a[href*='/junit-team/junit5/raw/main/README.md']").download();
 
@@ -31,23 +31,23 @@ public class SelenideFilesTest {
             byte[] bytes = is.readAllBytes();
             String content = new String(bytes, StandardCharsets.UTF_8);
             Assertions.assertTrue(content.contains("This repository is the home of _JUnit 5_"));
-        } //всегда после чтения или записи нужно закрывать стрим, т.к. мы используем файловые дискрипторы своей ОС
+        } //РІСЃРµРіРґР° РїРѕСЃР»Рµ С‡С‚РµРЅРёСЏ РёР»Рё Р·Р°РїРёСЃРё РЅСѓР¶РЅРѕ Р·Р°РєСЂС‹РІР°С‚СЊ СЃС‚СЂРёРј, С‚.Рє. РјС‹ РёСЃРїРѕР»СЊР·СѓРµРј С„Р°Р№Р»РѕРІС‹Рµ РґРёСЃРєСЂРёРїС‚РѕСЂС‹ СЃРІРѕРµР№ РћРЎ
 
 
-//если хотим протестировать исключения, то нужно писать вот так
+//РµСЃР»Рё С…РѕС‚РёРј РїСЂРѕС‚РµСЃС‚РёСЂРѕРІР°С‚СЊ РёСЃРєР»СЋС‡РµРЅРёСЏ, С‚Рѕ РЅСѓР¶РЅРѕ РїРёСЃР°С‚СЊ РІРѕС‚ С‚Р°Рє
         /*Assertions.assertThrows(FileNotFoundException.class,
                 () -> $("a[href*='/junit-team/junit5/raw/main/README.md']").download())*/
 
         /*
-InputStream позволяет читать файл по байтово - универсален
-reader позволяет читать файл по символьно - читает только текстовые
+InputStream РїРѕР·РІРѕР»СЏРµС‚ С‡РёС‚Р°С‚СЊ С„Р°Р№Р» РїРѕ Р±Р°Р№С‚РѕРІРѕ - СѓРЅРёРІРµСЂСЃР°Р»РµРЅ
+reader РїРѕР·РІРѕР»СЏРµС‚ С‡РёС‚Р°С‚СЊ С„Р°Р№Р» РїРѕ СЃРёРјРІРѕР»СЊРЅРѕ - С‡РёС‚Р°РµС‚ С‚РѕР»СЊРєРѕ С‚РµРєСЃС‚РѕРІС‹Рµ
 
-OutputStream позволяет записывать любой файл в виде байтов
-writer позволяет записывать любой файл в виде символов
+OutputStream РїРѕР·РІРѕР»СЏРµС‚ Р·Р°РїРёСЃС‹РІР°С‚СЊ Р»СЋР±РѕР№ С„Р°Р№Р» РІ РІРёРґРµ Р±Р°Р№С‚РѕРІ
+writer РїРѕР·РІРѕР»СЏРµС‚ Р·Р°РїРёСЃС‹РІР°С‚СЊ Р»СЋР±РѕР№ С„Р°Р№Р» РІ РІРёРґРµ СЃРёРјРІРѕР»РѕРІ
  */
     }
 
-    //импорт файла любого
+    //РёРјРїРѕСЂС‚ С„Р°Р№Р»Р° Р»СЋР±РѕРіРѕ
     @Test
     void uploadFileTest() {
         open("https://fineuploader.com/demos.html");
@@ -56,8 +56,8 @@ writer позволяет записывать любой файл в виде символов
 
     }
 
-    //экспорт файла PDF
-    //для парсинга формата PDF нужно добавить библиотеку 'com.codeborne:pdf-test:1.8.1'
+    //СЌРєСЃРїРѕСЂС‚ С„Р°Р№Р»Р° PDF
+    //РґР»СЏ РїР°СЂСЃРёРЅРіР° С„РѕСЂРјР°С‚Р° PDF РЅСѓР¶РЅРѕ РґРѕР±Р°РІРёС‚СЊ Р±РёР±Р»РёРѕС‚РµРєСѓ 'com.codeborne:pdf-test:1.8.1'
     @Test
     void downloadPdfFileTest() throws Exception {
         open("https://junit.org/junit5/docs/current/user-guide/");
@@ -67,7 +67,7 @@ writer позволяет записывать любой файл в виде символов
         System.out.println();
     }
 
-    //экспорт файла XLS
+    //СЌРєСЃРїРѕСЂС‚ С„Р°Р№Р»Р° XLS
     @Test
     void downloadXlsFileTest() throws Exception {
 
@@ -75,7 +75,7 @@ writer позволяет записывать любой файл в виде символов
         File downloaded = $("a[href*='Grafik_otpuskov_2016_full_holidays.xlsm']")
                 .download();
         XLS xls = new XLS(downloaded);
-        Assertions.assertEquals("Сотрудник 1",
+        Assertions.assertEquals("РЎРѕС‚СЂСѓРґРЅРёРє 1",
                 xls.excel.getSheetAt(0)
                         .getRow(8)
                         .getCell(0)

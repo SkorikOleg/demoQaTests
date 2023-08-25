@@ -1,8 +1,6 @@
 package guru.qa.hw;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import guru.qa.ex.FileParsingTest;
-import guru.qa.model.GlossaryModelExample;
 import guru.qa.model.ModelHW10;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -12,9 +10,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
-public class checkJsonWithJacksonHW10Test {
+public class CheckJsonWithJacksonHW10Test {
 
-    private final ClassLoader cl = checkJsonWithJacksonHW10Test.class.getClassLoader();
+    private final ClassLoader cl = CheckJsonWithJacksonHW10Test.class.getClassLoader();
 
 
     @DisplayName("Использование jackson для чтения json")
