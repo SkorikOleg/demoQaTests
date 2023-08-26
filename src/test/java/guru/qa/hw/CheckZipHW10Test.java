@@ -6,6 +6,8 @@ import com.opencsv.CSVReader;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -41,15 +43,15 @@ public class CheckZipHW10Test {
             Reader reader = new InputStreamReader(zip);
             CSVReader csvReader = new CSVReader(reader);
             List<String[]> content = csvReader.readAll();
-            Assertions.assertEquals(3, content.size());
+            assertThat(content.size()).isEqualTo(3);
 
             final String[] firstRow = content.get(0);
             final String[] secondRow = content.get(1);
             final String[] thirdRow = content.get(2);
 
-            Assertions.assertArrayEquals(new String[]{"Film", " actor"}, firstRow);
-            Assertions.assertArrayEquals(new String[]{"Dune", " Zendaya"}, secondRow);
-            Assertions.assertArrayEquals(new String[]{"Mission: Impossible", " Tom Cruise"}, thirdRow);
+            assertThat(new String[] {"Film", " actor"}).isEqualTo(firstRow);
+            assertThat(new String[] {"Dune", " Zendaya"}).isEqualTo(secondRow);
+            assertThat(new String[] {"Mission: Impossible", " Tom Cruise"}).isEqualTo(thirdRow);
         }
     }
 

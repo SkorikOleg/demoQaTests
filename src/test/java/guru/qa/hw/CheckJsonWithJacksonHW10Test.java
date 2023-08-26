@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -23,19 +26,21 @@ public class CheckJsonWithJacksonHW10Test {
             ObjectMapper mapper = new ObjectMapper();
             ModelHW10 modelHW10 = mapper.readValue(reader, ModelHW10.class);
 
+            assertThat(modelHW10.getBrand()).isEqualTo("toyota");
 
-            Assertions.assertEquals("toyota", modelHW10.getBrand());
+            assertThat(modelHW10.getModel()).isEqualTo("allion");
 
-            Assertions.assertEquals("allion", modelHW10.getModel());
+            assertThat(modelHW10.getCharacteristics().getCapacityEngine())
+                    .isEqualTo(1.5);
 
-            Assertions.assertEquals(1.5, modelHW10.getCharacteristics().getCapacityEngine());
+            assertThat(modelHW10.getCharacteristics().getColourBody())
+                    .isEqualTo("grey");
 
-            Assertions.assertEquals("grey", modelHW10.getCharacteristics().getColourBody());
+            assertThat(modelHW10.getCharacteristics().getColourInterior())
+                    .isEqualTo("black");
 
-            Assertions.assertEquals("black", modelHW10.getCharacteristics().getColourInterior());
-
-            Assertions.assertEquals(2008, modelHW10.getCharacteristics().getIssueYear());
-            
+            assertThat(modelHW10.getCharacteristics().getIssueYear())
+                    .isEqualTo(2008);
         }
     }
 }
