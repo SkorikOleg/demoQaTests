@@ -1,5 +1,23 @@
 plugins {
     id 'java-library'
+    id 'io.qameta.allure-report' version '2.11.2'
+}
+
+group 'guru.qa'
+version '1.0'
+
+allure {
+    report {
+        version.set('2.23.0')
+    }
+    adapter { // отвечает за появление папочки build/allure-results
+        aspectjWeaver.set(true) //обработка аннотации @Step
+        frameworks {
+            junit5 { //название фреймворка
+                adapterVersion.set('2.23.0') //версия интеграции фреймворка и Allure
+            }
+        }
+    }
 }
 
 repositories {
@@ -13,8 +31,6 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
-group 'guru.qa'
-version '1.0'
 
 dependencies {
     testImplementation(
@@ -28,7 +44,8 @@ dependencies {
             'com.google.code.gson:gson:2.10.1',
             'com.fasterxml.jackson.core:jackson-core:2.13.1',
             'com.fasterxml.jackson.core:jackson-databind:2.13.1',
-            'org.assertj:assertj-core:3.24.2'
+            'org.assertj:assertj-core:3.24.2',
+            'io.qameta.allure:allure-selenide:2.23.0'
     )
 }
 
