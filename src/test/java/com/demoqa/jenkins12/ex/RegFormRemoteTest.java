@@ -16,7 +16,7 @@ public class RegFormRemoteTest extends TestBase {
     @Tag("remote")
     @Test
     void fillRegistrationForm() {
-        open("https://demoqa.com/automation-practice-form");
+        open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
