@@ -26,15 +26,12 @@ public class RegFormRemoteTest extends TestBase {
 
 
         $("#genterWrapper").$(byText("Male")).click();
-        //$("#gender-radio-1").selectRadio(".custom-control-label"); - можно использовать для радио батн
-        // ,но надо разобраться, что будет лежать в value
 
 
         $("#userNumber").setValue("1234567890");
 
 
         $("#dateOfBirthInput").click();
-        //$("#dateOfBirthInput").clear(); - разобраться, как очищать поле, что бы ввести свое значение
         $(".react-datepicker__month-select").selectOptionContainingText("June");
         $(".react-datepicker__year-select").selectOptionContainingText("1992");
         $(".react-datepicker__day--014:not(.react-datepicker__day--outside-month)").click();
@@ -43,8 +40,7 @@ public class RegFormRemoteTest extends TestBase {
 
         $("#hobbiesWrapper").$(byText("Sports")).click();
 
-        $("#uploadPicture").uploadFromClasspath("filesForUtils/test.jpg"); //для добавления файла через кнопку
-        //для этого надо создать папку resources и добавить туда нужно вложение
+        $("#uploadPicture").uploadFromClasspath("filesForUtils/test.jpg");
 
         $("#currentAddress").click();
         $("#currentAddress").setValue("Amur region, Lenin str, 270 house");
