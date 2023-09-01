@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class RegFormRemoteTest extends TestBase {
+public class RegFormRemoteTest extends RemoteTestBase {
 
 
     @Tag("remote")
