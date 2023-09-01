@@ -1,7 +1,10 @@
 package com.demoqa.jenkins12.ex;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.HashMap;
@@ -28,5 +31,9 @@ public class RemoteTestBase {
         value.put("enableVideo", true);
         capabilities.setCapability("selenoid:options", value);
         Configuration.browserCapabilities = capabilities;
+    }
+    @BeforeEach
+    void addListenerAllure (){
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 }
