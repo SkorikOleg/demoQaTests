@@ -1,16 +1,20 @@
-package com.demoqa.tests;
+package com.demoqa.jenkins12.ex;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
+import com.demoqa.tests.TestBase;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
-public class RegFormTest extends TestBase {
-    
-        @Test
+public class RegFormRemoteTest extends TestBase {
+
+
+    @Tag("remote")
+    @Test
     void fillRegistrationForm() {
         open("https://demoqa.com/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
@@ -53,7 +57,7 @@ public class RegFormTest extends TestBase {
         $("#submit").click();
 
         $(".table-responsive").shouldHave(text("Oleg Skorik"), text("g@gmail.com"), text("1234567890"));
-        $(".table-responsive").shouldHave(text("Male"), text("14 June,1992"),text("Maths"), text("Sports"));
+        $(".table-responsive").shouldHave(text("Male"), text("14 June,1992"), text("Maths"), text("Sports"));
         $(".table-responsive").shouldHave(text("test.jpg"), text("Amur region, Lenin str, 270 house"));
         $(".table-responsive").shouldHave(text("NCR Noida"));
     }
