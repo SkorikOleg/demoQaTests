@@ -51,8 +51,13 @@ dependencies {
 
 test {
     useJUnitPlatform {
-        // includeTags "smoke" //необходимо для запуска тестов по тегам
+        //includeTags "simple" //необходимо для запуска тестов по тегам
     }
+}
 
-
+//альтернативный запуск тестов по тегам
+task simple_test (type: Test) {
+    useJUnitPlatform {
+        includeTags("simple")
+    }
 }
