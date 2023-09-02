@@ -39,7 +39,7 @@ public class RegFormTest extends TestBase {
 
         $("#hobbiesWrapper").$(byText("Sports")).click();
 
-        $("#uploadPicture").uploadFromClasspath("filesForUtils/test.jpg"); //для добавления файла через кнопку
+        $("#uploadPicture").uploadFromClasspath("test.jpg"); //для добавления файла через кнопку
         //для этого надо создать папку resources и добавить туда нужно вложение
 
         $("#currentAddress").click();
