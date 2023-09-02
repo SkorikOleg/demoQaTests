@@ -25,7 +25,5 @@ public class AnnotatedStepsHWTest {
         steps.chooseFoundRepo();
         steps.clickOnIssueTab();
         steps.searchOurIssueNumber(NumberIssue);
-
-
     }
 }

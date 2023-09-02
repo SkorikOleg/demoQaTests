@@ -2,21 +2,28 @@ package com.demoqa.jenkins12.ex;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import com.demoqa.tests.TestBase;
+import io.qameta.allure.Attachment;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
+@Tag("remote")
 public class RegFormRemoteTest extends RemoteTestBase {
 
-
-    @Tag("remote")
     @Test
+    @Story("Проверка заполнения регистрационной формы")
+    @Owner("Skorik Oleg")
     @DisplayName("Успешная регистрация")
     void fillRegistrationForm() {
 
