@@ -20,6 +20,7 @@ public class RemoteTestBase {
     static void beforeAll() { // с этой аннотацией всегда используется метод static
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
+        Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserSize = System.getProperty("browserSize");
         Configuration.browserVersion = System.getProperty("browserVersion");
 
