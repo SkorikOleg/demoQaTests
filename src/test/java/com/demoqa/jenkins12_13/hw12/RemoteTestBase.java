@@ -1,8 +1,8 @@
-package com.demoqa.jenkins12.hw;
+package com.demoqa.jenkins12_13.hw12;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.demoqa.jenkins12.hw.helpers.Attach;
+import com.demoqa.jenkins12_13.hw12.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -11,8 +11,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 
 public class RemoteTestBase {

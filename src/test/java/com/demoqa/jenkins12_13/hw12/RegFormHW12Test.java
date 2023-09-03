@@ -1,7 +1,6 @@
-package com.demoqa.jenkins12.hw;
+package com.demoqa.jenkins12_13.hw12;
 
 import com.demoqa.pages.RegFormPage;
-import com.demoqa.tests.TestBase;
 import com.demoqa.utils.UserVariables;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
