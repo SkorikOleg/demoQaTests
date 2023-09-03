@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import static io.qameta.allure.Allure.step;
 
 @Tag("remote")
-public class RegFormHW12Test extends RemoteTestBase {
+public class RegFormHW12_13Test extends RemoteTestBase {
 
     RegFormPage regFormPage = new RegFormPage();
     UserVariables userVariables = new UserVariables();
