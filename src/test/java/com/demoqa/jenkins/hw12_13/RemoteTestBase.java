@@ -20,9 +20,12 @@ public class RemoteTestBase {
     static void beforeAll() { // с этой аннотацией всегда используется метод static
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = System.getProperty("browserSize");
+        Configuration.browserVersion = System.getProperty("browserVersion");
 
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        String selenoidUrl = System.getProperty("selenoidUrl", "selenoid.autotests.cloud/");
+        String selenoidCred = System.getProperty("selenoidCred", "user1:1234@");
+        Configuration.remote = "https://" + selenoidCred + selenoidUrl + "/wd/hub";
         //для того что бы прописать креды, нужно добавить в урл https://наименование пользака:пароль@урл
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
