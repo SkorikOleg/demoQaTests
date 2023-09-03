@@ -25,7 +25,8 @@ public class RemoteTestBase {
         Configuration.browserVersion = System.getProperty("browserVersion");
 
         String selenoidUrl = System.getProperty("selenoidUrl", "selenoid.autotests.cloud/");
-        Configuration.remote = "https://user1:1234@" + selenoidUrl + "/wd/hub";
+        String selenoidCred = System.getProperty("selenoidCred", "user1:1234@");
+        Configuration.remote = "https://" + selenoidCred + selenoidUrl + "/wd/hub";
         //для того что бы прописать креды, нужно добавить в урл https://наименование пользака:пароль@урл
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
