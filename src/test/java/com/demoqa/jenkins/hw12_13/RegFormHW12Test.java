@@ -1,4 +1,4 @@
-package com.demoqa.jenkins12_13.hw12;
+package com.demoqa.jenkins.hw12_13;
 
 import com.demoqa.pages.RegFormPage;
 import com.demoqa.utils.UserVariables;

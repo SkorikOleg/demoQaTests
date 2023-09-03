@@ -1,8 +1,8 @@
-package com.demoqa.jenkins12_13.hw12;
+package com.demoqa.jenkins.hw12_13;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.demoqa.jenkins12_13.hw12.helpers.Attach;
+import com.demoqa.jenkins.hw12_13.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -21,7 +21,6 @@ public class RemoteTestBase {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
-        //Configuration.holdBrowserOpen = true;
 
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         //для того что бы прописать креды, нужно добавить в урл https://наименование пользака:пароль@урл

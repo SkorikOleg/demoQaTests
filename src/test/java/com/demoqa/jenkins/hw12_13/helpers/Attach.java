@@ -1,4 +1,4 @@
-package com.demoqa.jenkins12_13.hw12.helpers;
+package com.demoqa.jenkins.hw12_13.helpers;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
