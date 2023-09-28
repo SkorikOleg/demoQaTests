@@ -1,0 +1,17 @@
+{
+  "base": {
+    "logo": "logo.png",
+    "project": "Registration form",
+    "environment": "Test",
+    "comment": "some comment",
+    "reportLink": "https://demoqa.com/automation-practice-form",
+    "language": "ru",
+    "allureFolder": "build/allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "6390748578:AAFTbshxDhouxcuXlB917FeI0ZagbaMtCVc",
+    "chat": "-4027623392",
+    "replyTo": ""
+  }
+}
